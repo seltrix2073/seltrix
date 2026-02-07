@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SELTRIX | Services</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family: 'Poppins', sans-serif;
+      background: #050505;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    nav{
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(10px);
+      z-index: 999;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    nav h1{
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      letter-spacing: 3px;
+      color: white;
+    }
+
+    nav h1 span{
+      color: silver;
+    }
+
+    nav ul{
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a{
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+      letter-spacing: 2px;
+      transition: 0.3s;
+      opacity: 0.85;
+    }
+
+    nav ul li a:hover{
+      color: silver;
+      opacity: 1;
+    }
+
+    .page-header{
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 10%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.7)),
+                  url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .page-header h2{
+      font-family: 'Playfair Display', serif;
+      font-size: 55px;
+      letter-spacing: 5px;
+    }
+
+    .page-header h2 span{
+      color: silver;
+    }
+
+    .page-header p{
+      margin-top: 12px;
+      opacity: 0.8;
+      letter-spacing: 1px;
+      font-size: 14px;
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    section{
+      padding: 90px 8%;
+    }
+
+    .title{
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
+
+    .subtitle{
+      opacity: 0.8;
+      max-width: 850px;
+      line-height: 1.8;
+      letter-spacing: 1px;
+      font-size: 14px;
+      margin-bottom: 50px;
+    }
+
+    .service-grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .service-box{
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 35px;
+      border-radius: 22px;
+      transition: 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-box::before{
+      content:"";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(192,192,192,0.15), transparent);
+      opacity: 0;
+      transition: 0.4s;
+    }
+
+    .service-box:hover::before{
+      opacity: 1;
+    }
+
+    .service-box:hover{
+      transform: translateY(-10px);
+      border-color: silver;
+      box-shadow: 0px 0px 30px rgba(192,192,192,0.15);
+    }
+
+    .service-box h3{
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+      color: silver;
+    }
+
+    .service-box p{
+      font-size: 13px;
+      opacity: 0.75;
+      line-height: 1.8;
+    }
+
+    .service-box span{
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      opacity: 0.8;
+      color: white;
+    }
+
+    .cta{
+      margin-top: 90px;
+      padding: 60px;
+      border-radius: 25px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+
+    .cta h2{
+      font-family: 'Playfair Display', serif;
+      font-size: 35px;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .cta h2 span{
+      color: silver;
+    }
+
+    .cta p{
+      opacity: 0.8;
+      font-size: 14px;
+      max-width: 750px;
+      margin: auto;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .cta a{
+      display: inline-block;
+      padding: 14px 40px;
+      border-radius: 30px;
+      background: silver;
+      color: black;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+
+    .cta a:hover{
+      background: white;
+      transform: scale(1.05);
+    }
+
+    footer{
+      padding: 25px 8%;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      opacity: 0.6;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-top: 60px;
+    }
+
+    @media(max-width:768px){
+      .page-header h2{
+        font-size: 40px;
+      }
+
+      .cta{
+        padding: 40px 20px;
+      }
+
+      nav ul{
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <h1>SEL<span>TRIX</span></h1>
+
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="services.html">SERVICES</a></li>
+      <li><a href="work.html">WORK</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <div>
+      <h2>Our <span>Services</span></h2>
+      <p>
+        We don’t sell websites. We craft premium online presence.
+        Luxury, clean design, and powerful digital identity.
+      </p>
+    </div>
+  </header>
+
+  <section>
+    <h2 class="title">What Seltrix Offers</h2>
+    <p class="subtitle">
+      Seltrix provides high-end digital solutions for creators, businesses, and premium brands.
+      Every website is designed with elegance and built with perfection.
+    </p>
+
+    <div class="service-grid">
+      <div class="service-box">
+        <h3>Luxury Website Design</h3>
+        <p>
+          Premium layouts inspired by high-end brands.
+          Smooth, minimal, elegant, and powerful user experience.
+        </p>
+        <span>01 — PREMIUM DESIGN</span>
+      </div>
+
+      <div class="service-box">
+        <h3>Business Websites</h3>
+        <p>
+          Professional business websites that build trust and increase conversions.
+          Perfect for local and global brands.
+        </p>
+        <span>02 — BUSINESS IDENTITY</span>
+      </div>
+
+      <div class="service-box">
+        <h3>Portfolio Websites</h3>
+        <p>
+          Stylish portfolios for creators, designers, editors, developers and influencers.
+          Clean & premium look.
+        </p>
+        <span>03 — CREATOR PORTFOLIO</span>
+      </div>
+
+      <div class="service-box">
+        <h3>Landing Pages</h3>
+        <p>
+          Modern landing pages for promotions, product launches, and campaigns.
+          Designed to look premium and convert fast.
+        </p>
+        <span>04 — SALES BOOST</span>
+      </div>
+
+      <div class="service-box">
+        <h3>Website Redesign</h3>
+        <p>
+          If your website looks old or basic, we upgrade it into a luxury modern design.
+        </p>
+        <span>05 — UPGRADE LOOK</span>
+      </div>
+
+      <div class="service-box">
+        <h3>Responsive Mobile Design</h3>
+        <p>
+          Perfect design for mobile, tablet and desktop.
+          Smooth experience on every screen.
+        </p>
+        <span>06 — RESPONSIVE</span>
+      </div>
+    </div>
+
+    <div class="cta">
+      <h2>Custom <span>Pricing</span></h2>
+      <p>
+        Pricing is based on your project requirements. Send us your vision, and Seltrix will respond with a custom quote crafted exclusively for you.
+      </p>
+<a href="contact.html#quote">GET A QUOTE</a>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 SELTRIX — Crafted & Built by Duggu
+  </footer>
+
+</body>
+</html>
