@@ -37,11 +37,15 @@
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
-    /* LOGO */
-    .logo img{
-      height: 90px;
-      width: auto;
-      display: block;
+    nav h1{
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      letter-spacing: 3px;
+      color: white;
+    }
+
+    nav h1 span{
+      color: silver;
     }
 
     nav ul{
@@ -64,62 +68,72 @@
       opacity: 1;
     }
 
-    /* HERO SECTION */
-    header{
+    /* HERO */
+    .hero{
       height: 100vh;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
       padding: 0 10%;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.7)),
-                  url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80");
+      background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.6)),
+                  url("https://images.unsplash.com/photo-1526481280695-3c687fd643ed?auto=format&fit=crop&w=1600&q=80");
       background-size: cover;
       background-position: center;
     }
 
-    header h2{
+    .hero h2{
       font-family: 'Playfair Display', serif;
-      font-size: 55px;
-      letter-spacing: 5px;
+      font-size: 70px;
+      letter-spacing: 10px;
+      margin-bottom: 15px;
     }
 
-    header h2 span{
+    .hero h2 span{
       color: silver;
     }
 
-    header p{
-      margin-top: 12px;
+    .hero p{
+      font-size: 15px;
+      max-width: 700px;
+      margin: auto;
       opacity: 0.8;
-      letter-spacing: 1px;
-      font-size: 14px;
-      max-width: 750px;
-      margin-left: auto;
-      margin-right: auto;
       line-height: 1.7;
+      letter-spacing: 1px;
     }
 
-    .hero-btns{
-      margin-top: 30px;
+    .crafted{
+      margin-top: 15px;
+      font-size: 13px;
+      letter-spacing: 3px;
+      opacity: 0.75;
+      color: silver;
+    }
+
+    .hero .btns{
+      margin-top: 35px;
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 20px;
       flex-wrap: wrap;
     }
 
-    .hero-btns a{
-      text-decoration: none;
-      padding: 14px 40px;
+    .btn{
+      padding: 12px 30px;
       border-radius: 30px;
-      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
       letter-spacing: 2px;
       transition: 0.3s;
+      cursor: pointer;
       display: inline-block;
     }
 
     .btn-primary{
       background: silver;
       color: black;
+      font-weight: 500;
+      border: none;
     }
 
     .btn-primary:hover{
@@ -127,12 +141,13 @@
       transform: scale(1.05);
     }
 
-    .btn-secondary{
+    .btn-outline{
       border: 1px solid silver;
       color: silver;
+      background: transparent;
     }
 
-    .btn-secondary:hover{
+    .btn-outline:hover{
       background: silver;
       color: black;
       transform: scale(1.05);
@@ -146,14 +161,14 @@
     .title{
       font-family: 'Playfair Display', serif;
       font-size: 38px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       letter-spacing: 2px;
     }
 
     .subtitle{
       opacity: 0.8;
-      max-width: 850px;
-      line-height: 1.8;
+      max-width: 750px;
+      line-height: 1.7;
       letter-spacing: 1px;
       font-size: 14px;
       margin-bottom: 50px;
@@ -162,7 +177,7 @@
     /* CARDS */
     .cards{
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 25px;
     }
 
@@ -170,21 +185,21 @@
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.08);
       padding: 30px;
-      border-radius: 22px;
+      border-radius: 20px;
       transition: 0.4s;
     }
 
     .card:hover{
       transform: translateY(-10px);
       border-color: silver;
-      box-shadow: 0px 0px 35px rgba(192,192,192,0.15);
+      box-shadow: 0px 0px 25px rgba(192,192,192,0.2);
     }
 
     .card h3{
       font-family: 'Playfair Display', serif;
       font-size: 22px;
+      margin-bottom: 10px;
       letter-spacing: 1px;
-      margin-bottom: 12px;
       color: silver;
     }
 
@@ -196,49 +211,10 @@
 
     /* CTA */
     .cta{
-      margin-top: 80px;
-      padding: 60px;
-      border-radius: 25px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
       text-align: center;
-    }
-
-    .cta h2{
-      font-family: 'Playfair Display', serif;
-      font-size: 35px;
-      letter-spacing: 2px;
-      margin-bottom: 15px;
-    }
-
-    .cta h2 span{
-      color: silver;
-    }
-
-    .cta p{
-      opacity: 0.8;
-      font-size: 14px;
-      max-width: 750px;
-      margin: auto;
-      line-height: 1.8;
-      margin-bottom: 25px;
-    }
-
-    .cta a{
-      display: inline-block;
-      padding: 14px 40px;
-      border-radius: 30px;
-      background: silver;
-      color: black;
-      text-decoration: none;
-      font-weight: 600;
-      letter-spacing: 2px;
-      transition: 0.3s;
-    }
-
-    .cta a:hover{
-      background: white;
-      transform: scale(1.05);
+      background: rgba(255,255,255,0.02);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     /* FOOTER */
@@ -249,13 +225,12 @@
       opacity: 0.6;
       font-size: 13px;
       letter-spacing: 1px;
-      margin-top: 60px;
     }
 
     /* RESPONSIVE */
     @media(max-width:768px){
-      header h2{
-        font-size: 40px;
+      .hero h2{
+        font-size: 45px;
       }
 
       nav ul{
@@ -269,11 +244,7 @@
 
   <!-- NAVBAR -->
   <nav>
-
-    <!-- LOGO ADDED -->
-    <a href="index.html" class="logo">
-      <img src="images/seltrix-logo.png" alt="Seltrix Logo">
-    </a>
+    <h1>SEL<span>TRIX</span></h1>
 
     <ul>
       <li><a href="index.html">HOME</a></li>
@@ -285,60 +256,58 @@
   </nav>
 
   <!-- HERO -->
-  <header>
+  <div class="hero">
     <div>
-      <h2>SELTRIX <span>Luxury Web Design</span></h2>
+      <h2>SEL<span>TRIX</span></h2>
+
       <p>
-        Crafted & built by Duggu.  
-        Seltrix creates premium websites that feel modern, elegant, and powerful.
+        A premium web design studio built for modern brands.  
+        Clean. Elegant. Powerful.
       </p>
 
-      <div class="hero-btns">
-        <a href="contact.html#quote" class="btn-primary">GET A QUOTE</a>
-        <a href="work.html" class="btn-secondary">VIEW WORK</a>
+      <div class="crafted">Crafted & Built by Duggu</div>
+
+      <div class="btns">
+        <a href="contact.html" class="btn btn-primary">GET A WEBSITE</a>
+        <a href="work.html" class="btn btn-outline">VIEW WORK</a>
       </div>
     </div>
-  </header>
+  </div>
 
-  <!-- SERVICES PREVIEW -->
+  <!-- SECTION -->
   <section>
-    <h2 class="title">What We Do</h2>
+    <h2 class="title">Luxury Web Design</h2>
     <p class="subtitle">
-      Seltrix is built to deliver luxury websites that match premium brands.
-      We craft modern digital experiences that feel exclusive and powerful.
+      Seltrix creates premium websites inspired by luxury brands.
+      Minimal design, smooth experience, and modern elegance.
     </p>
 
     <div class="cards">
       <div class="card">
-        <h3>Luxury Web Design</h3>
-        <p>
-          Clean, premium, Rolls Royce level website design that gives your business a powerful identity.
-        </p>
+        <h3>Premium Look</h3>
+        <p>Elegant design that feels expensive and professional.</p>
       </div>
 
       <div class="card">
-        <h3>Responsive Layout</h3>
-        <p>
-          Perfect design on mobile, tablet and desktop so your brand always looks premium everywhere.
-        </p>
+        <h3>High Performance</h3>
+        <p>Fast loading website with smooth scrolling experience.</p>
       </div>
 
       <div class="card">
-        <h3>Fast & Smooth</h3>
-        <p>
-          Lightweight and smooth websites that load fast and feel professional for premium clients.
-        </p>
+        <h3>Modern Branding</h3>
+        <p>Your brand will look powerful, premium and clean.</p>
       </div>
     </div>
+  </section>
 
-    <div class="cta">
-      <h2>Build Your <span>Premium Presence</span></h2>
-      <p>
-        Pricing is based on your project requirements.  
-        Send your vision, and Seltrix will respond with a custom quote crafted exclusively for you.
-      </p>
-      <a href="contact.html#quote">CONTACT SELTRIX</a>
-    </div>
+  <!-- CTA -->
+  <section class="cta">
+    <h2 class="title">Ready to Build Your Website?</h2>
+    <p class="subtitle">
+      Contact Seltrix today and get your premium website designed with luxury.
+    </p>
+
+    <a href="contact.html" class="btn btn-primary">CONTACT NOW</a>
   </section>
 
   <!-- FOOTER -->
