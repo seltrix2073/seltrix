@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SELTRIX | About</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family: 'Poppins', sans-serif;
+      background: #050505;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    nav{
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(10px);
+      z-index: 999;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    nav h1{
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      letter-spacing: 3px;
+      color: white;
+    }
+
+    nav h1 span{
+      color: silver;
+    }
+
+    nav ul{
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a{
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+      letter-spacing: 2px;
+      transition: 0.3s;
+      opacity: 0.85;
+    }
+
+    nav ul li a:hover{
+      color: silver;
+      opacity: 1;
+    }
+
+    /* HEADER */
+    .page-header{
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 10%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.7)),
+                  url("https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .page-header h2{
+      font-family: 'Playfair Display', serif;
+      font-size: 55px;
+      letter-spacing: 5px;
+    }
+
+    .page-header h2 span{
+      color: silver;
+    }
+
+    .page-header p{
+      margin-top: 12px;
+      opacity: 0.8;
+      letter-spacing: 1px;
+      font-size: 14px;
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    /* SECTION */
+    section{
+      padding: 90px 8%;
+    }
+
+    .title{
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .subtitle{
+      opacity: 0.8;
+      max-width: 850px;
+      line-height: 1.8;
+      letter-spacing: 1px;
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+
+    /* CARDS */
+    .cards{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card{
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 30px;
+      border-radius: 20px;
+      transition: 0.4s;
+    }
+
+    .card:hover{
+      transform: translateY(-10px);
+      border-color: silver;
+      box-shadow: 0px 0px 25px rgba(192,192,192,0.2);
+    }
+
+    .card h3{
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      color: silver;
+    }
+
+    .card p{
+      font-size: 13px;
+      opacity: 0.75;
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+    footer{
+      padding: 25px 8%;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      opacity: 0.6;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .page-header h2{
+        font-size: 40px;
+      }
+
+      nav ul{
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <h1>SEL<span>TRIX</span></h1>
+
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="services.html">SERVICES</a></li>
+      <li><a href="work.html">WORK</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div>
+      <h2>About <span>Seltrix</span></h2>
+      <p>
+        Seltrix is not just a web design studio — it’s a premium digital identity builder.
+        Designed with luxury, crafted with perfection.
+      </p>
+    </div>
+  </header>
+
+  <!-- ABOUT CONTENT -->
+  <section>
+    <h2 class="title">Who We Are</h2>
+    <p class="subtitle">
+      Seltrix is a premium web design brand created by Duggu.
+      Our mission is to build elegant websites that feel luxurious, modern, and powerful.
+      We don’t create normal websites — we create premium digital experiences.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Luxury Design</h3>
+        <p>
+          We design websites inspired by luxury brands like Rolls Royce.
+          Minimal, clean and premium layouts.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>High-End Branding</h3>
+        <p>
+          We help businesses and creators build their identity with a powerful online presence.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Crafted by Duggu</h3>
+        <p>
+          Every Seltrix project is personally crafted and built by Duggu with full focus and perfection.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 SELTRIX — Crafted & Built by Duggu
+  </footer>
+
+</body>
+</html>

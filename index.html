@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SELTRIX | Home</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family: 'Poppins', sans-serif;
+      background: #050505;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    nav{
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(10px);
+      z-index: 999;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* LOGO */
+    .logo img{
+      height: 90px;
+      width: auto;
+      display: block;
+    }
+
+    nav ul{
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a{
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+      letter-spacing: 2px;
+      transition: 0.3s;
+      opacity: 0.85;
+    }
+
+    nav ul li a:hover{
+      color: silver;
+      opacity: 1;
+    }
+
+    /* HERO SECTION */
+    header{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 10%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.7)),
+                  url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+    }
+
+    header h2{
+      font-family: 'Playfair Display', serif;
+      font-size: 55px;
+      letter-spacing: 5px;
+    }
+
+    header h2 span{
+      color: silver;
+    }
+
+    header p{
+      margin-top: 12px;
+      opacity: 0.8;
+      letter-spacing: 1px;
+      font-size: 14px;
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .hero-btns{
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .hero-btns a{
+      text-decoration: none;
+      padding: 14px 40px;
+      border-radius: 30px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary{
+      background: silver;
+      color: black;
+    }
+
+    .btn-primary:hover{
+      background: white;
+      transform: scale(1.05);
+    }
+
+    .btn-secondary{
+      border: 1px solid silver;
+      color: silver;
+    }
+
+    .btn-secondary:hover{
+      background: silver;
+      color: black;
+      transform: scale(1.05);
+    }
+
+    /* SECTION */
+    section{
+      padding: 90px 8%;
+    }
+
+    .title{
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
+
+    .subtitle{
+      opacity: 0.8;
+      max-width: 850px;
+      line-height: 1.8;
+      letter-spacing: 1px;
+      font-size: 14px;
+      margin-bottom: 50px;
+    }
+
+    /* CARDS */
+    .cards{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card{
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 30px;
+      border-radius: 22px;
+      transition: 0.4s;
+    }
+
+    .card:hover{
+      transform: translateY(-10px);
+      border-color: silver;
+      box-shadow: 0px 0px 35px rgba(192,192,192,0.15);
+    }
+
+    .card h3{
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      color: silver;
+    }
+
+    .card p{
+      font-size: 13px;
+      opacity: 0.75;
+      line-height: 1.7;
+    }
+
+    /* CTA */
+    .cta{
+      margin-top: 80px;
+      padding: 60px;
+      border-radius: 25px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+
+    .cta h2{
+      font-family: 'Playfair Display', serif;
+      font-size: 35px;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .cta h2 span{
+      color: silver;
+    }
+
+    .cta p{
+      opacity: 0.8;
+      font-size: 14px;
+      max-width: 750px;
+      margin: auto;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .cta a{
+      display: inline-block;
+      padding: 14px 40px;
+      border-radius: 30px;
+      background: silver;
+      color: black;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+
+    .cta a:hover{
+      background: white;
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
+    footer{
+      padding: 25px 8%;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      opacity: 0.6;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-top: 60px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      header h2{
+        font-size: 40px;
+      }
+
+      nav ul{
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+
+    <!-- LOGO ADDED -->
+    <a href="index.html" class="logo">
+      <img src="images/seltrix-logo.png" alt="Seltrix Logo">
+    </a>
+
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="services.html">SERVICES</a></li>
+      <li><a href="work.html">WORK</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header>
+    <div>
+      <h2>SELTRIX <span>Luxury Web Design</span></h2>
+      <p>
+        Crafted & built by Duggu.  
+        Seltrix creates premium websites that feel modern, elegant, and powerful.
+      </p>
+
+      <div class="hero-btns">
+        <a href="contact.html#quote" class="btn-primary">GET A QUOTE</a>
+        <a href="work.html" class="btn-secondary">VIEW WORK</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVICES PREVIEW -->
+  <section>
+    <h2 class="title">What We Do</h2>
+    <p class="subtitle">
+      Seltrix is built to deliver luxury websites that match premium brands.
+      We craft modern digital experiences that feel exclusive and powerful.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Luxury Web Design</h3>
+        <p>
+          Clean, premium, Rolls Royce level website design that gives your business a powerful identity.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Responsive Layout</h3>
+        <p>
+          Perfect design on mobile, tablet and desktop so your brand always looks premium everywhere.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Fast & Smooth</h3>
+        <p>
+          Lightweight and smooth websites that load fast and feel professional for premium clients.
+        </p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <h2>Build Your <span>Premium Presence</span></h2>
+      <p>
+        Pricing is based on your project requirements.  
+        Send your vision, and Seltrix will respond with a custom quote crafted exclusively for you.
+      </p>
+      <a href="contact.html#quote">CONTACT SELTRIX</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 SELTRIX — Crafted & Built by Duggu
+  </footer>
+
+</body>
+</html>

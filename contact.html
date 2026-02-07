@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SELTRIX | Contact</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family: 'Poppins', sans-serif;
+      background: #050505;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    nav{
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(10px);
+      z-index: 999;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    nav h1{
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      letter-spacing: 3px;
+      color: white;
+    }
+
+    nav h1 span{
+      color: silver;
+    }
+
+    nav ul{
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a{
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+      letter-spacing: 2px;
+      transition: 0.3s;
+      opacity: 0.85;
+    }
+
+    nav ul li a:hover{
+      color: silver;
+      opacity: 1;
+    }
+
+    /* HEADER */
+    .page-header{
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 10%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.7)),
+                  url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .page-header h2{
+      font-family: 'Playfair Display', serif;
+      font-size: 55px;
+      letter-spacing: 5px;
+    }
+
+    .page-header h2 span{
+      color: silver;
+    }
+
+    .page-header p{
+      margin-top: 12px;
+      opacity: 0.8;
+      letter-spacing: 1px;
+      font-size: 14px;
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    /* CONTACT SECTION */
+    section{
+      padding: 90px 8%;
+    }
+
+    .title{
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
+
+    .subtitle{
+      opacity: 0.8;
+      max-width: 850px;
+      line-height: 1.8;
+      letter-spacing: 1px;
+      font-size: 14px;
+      margin-bottom: 50px;
+    }
+
+    .contact-box{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: start;
+    }
+
+    .info-card{
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 35px;
+      border-radius: 22px;
+      transition: 0.4s;
+    }
+
+    .info-card:hover{
+      border-color: silver;
+      box-shadow: 0px 0px 30px rgba(192,192,192,0.15);
+    }
+
+    .info-card h3{
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: silver;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
+
+    .info-card p{
+      font-size: 13px;
+      opacity: 0.75;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .info-card .small{
+      font-size: 12px;
+      opacity: 0.6;
+      letter-spacing: 1px;
+    }
+
+    /* FORM */
+    .form-card{
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 35px;
+      border-radius: 22px;
+      transition: 0.4s;
+    }
+
+    .form-card:hover{
+      border-color: silver;
+      box-shadow: 0px 0px 30px rgba(192,192,192,0.15);
+    }
+
+    form{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea{
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(0,0,0,0.4);
+      color: white;
+      outline: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    input:focus, textarea:focus{
+      border-color: silver;
+      box-shadow: 0px 0px 15px rgba(192,192,192,0.15);
+    }
+
+    textarea{
+      min-height: 130px;
+      resize: none;
+    }
+
+    button{
+      margin-top: 10px;
+      padding: 14px;
+      border-radius: 30px;
+      border: none;
+      background: silver;
+      color: black;
+      font-weight: 600;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover{
+      background: white;
+      transform: scale(1.03);
+    }
+
+    /* FOOTER */
+    footer{
+      padding: 25px 8%;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      opacity: 0.6;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-top: 60px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .contact-box{
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width:768px){
+      .page-header h2{
+        font-size: 40px;
+      }
+
+      nav ul{
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <h1>SEL<span>TRIX</span></h1>
+
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="services.html">SERVICES</a></li>
+      <li><a href="work.html">WORK</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="page-header">
+    <div>
+      <h2>Contact <span>Seltrix</span></h2>
+      <p>
+        Ready to build your premium website?  
+        Send your details and Seltrix will respond with a custom quote crafted exclusively for you.
+      </p>
+    </div>
+  </header>
+
+  <!-- CONTACT SECTION -->
+  <section id="quote">
+    <h2 class="title">Get a Quote</h2>
+    <p class="subtitle">
+      Pricing is based on your project requirements.  
+      Send your vision below and we will email you with the best price for your premium website.
+    </p>
+
+    <div class="contact-box">
+
+      <!-- INFO CARD -->
+      <div class="info-card">
+        <h3>SELTRIX</h3>
+        <p>
+          Crafted & built by Duggu.  
+          We create luxury websites that feel premium, modern and powerful.
+        </p>
+
+        <p class="small">
+          ✔ Fast Delivery <br>
+          ✔ Premium Design <br>
+          ✔ Mobile Responsive <br>
+          ✔ Clean & Modern Layout <br>
+          ✔ Trusted Quality
+        </p>
+
+        <p class="small" style="margin-top:20px;">
+          📩 Reply Time: Within 24 Hours <br>
+          🌍 Location: India
+        </p>
+<p class="small" style="margin-top:20px;">
+  📧 Email: <a href="mailto:seltrix2073@gmail.com" style="color:silver; text-decoration:none;">seltrix2073@gmail.com</a> <br><br>
+
+  💬 WhatsApp Business: 
+  <a href="https://wa.me/916230494437" target="_blank" style="color:silver; text-decoration:none;">
+    +91 62304 94437
+  </a>
+</p>
+
+      </div>
+
+      <!-- FORM CARD -->
+      <div class="form-card">
+        <form action="https://formspree.io/f/xvzqzqpa" method="POST">
+
+          <input type="text" name="name" placeholder="Your Name" required>
+
+          <input type="email" name="email" placeholder="Your Email" required>
+
+          <textarea name="message" placeholder="Write your message..." required></textarea>
+
+          <button type="submit">SEND MESSAGE</button>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 SELTRIX — Crafted & Built by Duggu
+  </footer>
+
+</body>
+</html>
