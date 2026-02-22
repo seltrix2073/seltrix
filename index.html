@@ -68,6 +68,35 @@
       opacity: 1;
     }
 
+    /* Hamburger Icon */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+      z-index: 1001;
+    }
+
+    .nav-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      border-radius: 3px;
+      transition: 0.3s;
+    }
+
+    .nav-toggle.active span:nth-child(1){
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle.active span:nth-child(2){
+      opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3){
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
     /* HERO */
     .hero{
       height: 100vh;
@@ -227,15 +256,63 @@
       letter-spacing: 1px;
     }
 
-    /* RESPONSIVE */
-    @media(max-width:768px){
-      .hero h2{
-        font-size: 45px;
-      }
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav { padding: 15px 5%; }
+      nav h1 { font-size: 20px; }
 
-      nav ul{
-        gap: 15px;
+      /* Fully opaque black side menu */
+      nav ul {
+        position: fixed;
+        top: 0;
+        right: -180px;
+        height: 100%;
+        width: 180px;
+        flex-direction: column;
+        background: #000; /* full black for entire menu */
+        padding: 80px 0; /* remove side transparency */
+        gap: 25px;
+        transition: 0.3s;
+        display: flex;
+        z-index: 998;
       }
+      nav ul li {
+        width: 100%;
+        text-align: center;
+      }
+      nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 15px 0;
+        background: #000; /* ensure link bg matches menu */
+        color: white;
+      }
+      nav ul.active { right: 0; }
+
+      .nav-toggle { display: flex; }
+
+      .hero { padding: 0 5%; }
+      .hero h2 { font-size: 45px; letter-spacing:3px; }
+      .hero p { font-size: 13px; max-width: 90%; }
+      .crafted { font-size: 12px; }
+      .btn { padding: 10px 25px; font-size: 13px; }
+      section { padding: 60px 5%; }
+      .title { font-size: 28px; }
+      .subtitle { font-size: 13px; max-width: 95%; }
+      .cards { gap: 20px; }
+      .card h3 { font-size: 18px; }
+      .card p { font-size: 12px; }
+    }
+
+    @media (max-width: 480px) {
+      nav { padding: 12px 4%; }
+      .hero h2 { font-size: 35px; }
+      .hero p { font-size: 12px; }
+      .btns { flex-direction: column; gap: 12px; }
+      .btn { width: 100%; text-align: center; }
+      section { padding: 50px 4%; }
+      .title { font-size: 24px; }
+      .subtitle { font-size: 12px; }
     }
   </style>
 </head>
@@ -246,12 +323,19 @@
   <nav>
     <h1>SEL<span>TRIX</span></h1>
 
+    <div class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <ul>
       <li><a href="index.html">HOME</a></li>
       <li><a href="about.html">ABOUT</a></li>
       <li><a href="services.html">SERVICES</a></li>
       <li><a href="work.html">WORK</a></li>
       <li><a href="contact.html">CONTACT</a></li>
+      <li><a href="offer.html">OFFERS</a></li>
     </ul>
   </nav>
 
@@ -259,14 +343,11 @@
   <div class="hero">
     <div>
       <h2>SEL<span>TRIX</span></h2>
-
       <p>
         A premium web design studio built for modern brands.  
         Clean. Elegant. Powerful.
       </p>
-
       <div class="crafted">Crafted & Built by Duggu</div>
-
       <div class="btns">
         <a href="contact.html" class="btn btn-primary">GET A WEBSITE</a>
         <a href="work.html" class="btn btn-outline">VIEW WORK</a>
@@ -314,6 +395,17 @@
   <footer>
     © 2026 SELTRIX — Crafted & Built by Duggu
   </footer>
+
+  <script>
+    // Hamburger toggle for right-side menu + transform to cross
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('nav ul');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      toggle.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>
